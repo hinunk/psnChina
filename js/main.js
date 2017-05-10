@@ -1,5 +1,5 @@
 //轮播暂停
-window.addEventListener('load', function() {
+window.addEventListener('DOMContentLoaded', function() {
 
 	//轮播
 	var swiper = new Swiper('.swiper-container', {
@@ -13,10 +13,10 @@ window.addEventListener('load', function() {
 	});
 
 	var timer
-	$('.swiper-slide a img').on('mouseenter', () => {
-		window.clearInterval(timer)
+	$('.swiper-slide a img').on('mouseenter',function(){
+		clearInterval(timer)
 	})
-	$('.swiper-slide a img').on('mouseleave', () => {
+	$('.swiper-slide a img').on('mouseleave',function(){
 		aotuTimer()
 	})
 
@@ -25,7 +25,7 @@ window.addEventListener('load', function() {
 			$('.swiper-button-next').click()
 		}, 2500)
 	}
-	aotuTimer()
+	
 })
 
 
