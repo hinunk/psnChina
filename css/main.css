@@ -800,4 +800,8 @@
 	.body-section a:hover{
 		background: rgb(0,162,255);
 	}
+	.body-section h2 {
+		font-size: 30px;
+		color: #000000;
+	}
 }

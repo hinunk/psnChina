@@ -44,7 +44,7 @@ tabH($('.tabs'))
 
 //navFix
 
-$(document).ready(function() {
+window.addEventListener("load", function() {
 	var navHeight = $("#navHeight").offset().top;
 	var navFix = $("#nav-wrap");
 	$(window).scroll(function() {
@@ -54,58 +54,59 @@ $(document).ready(function() {
 			navFix.removeClass("navFix");
 		}
 	})
-})
 
-$('.nav-wrap').navScroll({
-	mobileDropdown: true,
-	mobileBreakpoint: 768,
-	scrollSpy: true
-});
+	$('.nav-wrap').navScroll({
+		mobileDropdown: true,
+		mobileBreakpoint: 768,
+		scrollSpy: true
+	});
 
-$('.click-me').navScroll({
-	navHeight: 0
-});
+	$('.click-me').navScroll({
+		navHeight: 0
+	});
 
-$('.nav-wrap').on('click', '.nav-mobile', function(e) {
-	e.preventDefault();
-	$('.nav-wrap ul').slideToggle('fast');
+	$('.nav-wrap').on('click', '.nav-mobile', function(e) {
+		e.preventDefault();
+		$('.nav-wrap ul').slideToggle('fast');
+	});
+
 });
 
 //banner
-var wrapImg =  document.getElementById('wrapImage')
-wrapImg.addEventListener('mousemove',function(e){
+var wrapImg = document.getElementById('wrapImage')
+wrapImg.addEventListener('mousemove', function(e) {
 	let wiLeft = e.pageX - wrapImg.offsetLeft
 	let wiTop = e.pageY - wrapImg.offsetTop
-//	console.log(wiLeft,wiTop)
+	//	console.log(wiLeft,wiTop)
 	let wiWidth = wrapImg.offsetWidth
 	let wiHeigth = wrapImg.offsetHeight
-	
+
 	let wXcenter = wrapImg.offsetLeft + wiWidth / 2
 	let wYcenter = wrapImg.offsetTop + wiHeigth / 2
-	
+
 	let mouseXcenter = e.pageX - wXcenter
 	let mouseYcenter = e.pageY - wYcenter
-	
-	let maxDistance = Math.sqrt(wiWidth*wiWidth + wiHeigth*wiHeigth) / 2
-	
+
+	let maxDistance = Math.sqrt(wiWidth * wiWidth + wiHeigth * wiHeigth) / 2
+
 	let Xpercent = mouseXcenter / maxDistance
-    let Ypercent = mouseYcenter / maxDistance
-    
-    let xDeg = Xpercent * 5
-    let yDeg = Ypercent * 15
-    banner.style.transform = `translateZ(-70px) rotateX(${-yDeg}deg) rotateY(${xDeg}deg)`
-    
+	let Ypercent = mouseYcenter / maxDistance
+
+	let xDeg = Xpercent * 5
+	let yDeg = Ypercent * 15
+	banner.style.transform = `translateZ(-70px) rotateX(${-yDeg}deg) rotateY(${xDeg}deg)`
+
 })
 
 //goto
-$(document).ready(function () {
-            $.goup({
-                trigger: 100,
-                bottomOffset: 150,
-                locationOffset: 100,
-                title: '返回顶部',
-                titleAsText: true
-            });
-        });
-        
+$(document).ready(function() {
+	$.goup({
+		trigger: 100,
+		bottomOffset: 150,
+		locationOffset: 100,
+		title: '返回顶部',
+		titleAsText: true
+	});
+});
+
 //移动
