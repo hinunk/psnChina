@@ -8,20 +8,6 @@ var swiper = new Swiper('.swiper-container', {
 	spaceBetween: 30,
 	loop: true
 });
-var timer
-$('.imgaes-header').on('mouseenter', () => {
-	window.clearInterval(timer)
-})
-$('.imgaes-header').on('mouseleave', () => {
-	aotuTimer()
-})
-
-function aotuTimer() {
-	timer = setInterval(() => {
-		$('.swiper-button-next').click()
-	}, 2500)
-}
-aotuTimer()
 
 //tab
 window.tabH = function(element) {
@@ -109,4 +95,20 @@ $(document).ready(function() {
 	});
 });
 
-//移动
+//轮播暂停
+window.addEventListener('load', function() {
+	let timer
+	$('.imgaes-header').on('mouseenter', () => {
+		window.clearInterval(timer)
+	})
+	$('.imgaes-header').on('mouseleave', () => {
+		aotuTimer()
+	})
+
+	function aotuTimer() {
+		timer = setInterval(() => {
+			$('.swiper-button-next').click()
+		}, 2500)
+	}
+	aotuTimer()
+})
