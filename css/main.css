@@ -119,7 +119,7 @@
 		margin: 0 auto;
 		width: 1200px;
 		display: block;
-		border-bottom: 2px solid #eee;
+		border-bottom: 0px solid #eee;
 	}
 	.nav-wrap.navFix ul {
 		border-bottom: 0;
